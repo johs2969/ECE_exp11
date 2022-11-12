@@ -56,13 +56,13 @@ always @(posedge clk or negedge rst) begin
         led_out <=8'b0101_0101;
      end
      else begin if(|btn_t) begin
-        if(btn ==6'b100000)  dac_d_temp <= dac_d_temp -8'b0000_0001;
-        else if(btn ==6'b010000)  dac_d_temp <= dac_d_temp +8'b0000_0001;
-        else if(btn ==6'b001000)  dac_d_temp <= dac_d_temp -8'b0000_0010;
-        else if(btn ==6'b000100)  dac_d_temp <= dac_d_temp +8'b0000_0010;
-        else if(btn ==6'b000010)  dac_d_temp <= dac_d_temp -8'b0000_1000;
-        else if(btn ==6'b000001)  dac_d_temp <= dac_d_temp +8'b0000_1000;
-       led_out <= dac_d_temp;
+        if(btn ==6'b100000)  dac_d_temp = dac_d_temp -8'b0000_0001;
+        else if(btn ==6'b010000)  dac_d_temp = dac_d_temp +8'b0000_0001;
+        else if(btn ==6'b001000)  dac_d_temp = dac_d_temp -8'b0000_0010;
+        else if(btn ==6'b000100)  dac_d_temp = dac_d_temp +8'b0000_0010;
+        else if(btn ==6'b000010)  dac_d_temp = dac_d_temp -8'b0000_1000;
+        else if(btn ==6'b000001)  dac_d_temp = dac_d_temp +8'b0000_1000;
+       led_out = dac_d_temp;
         end
      end
  end       
