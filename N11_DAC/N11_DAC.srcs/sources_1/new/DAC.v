@@ -83,8 +83,8 @@ output reg [7:0] seg_sel;
 
 bin22bcd b1 (.clk(clk), .rst(rst), .bin(dac_d_temp), .bcd_out(bcd));
 
-always @(posedge clk or posedge rst) begin
-    if(rst) seg_sel <=8'b11111110;
+always @(posedge clk or negedge rst) begin
+    if(!rst) seg_sel <=8'b11111110;
     else begin
         seg_sel <={seg_sel[6:0],seg_sel[7]};
         end
